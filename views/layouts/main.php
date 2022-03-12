@@ -14,7 +14,7 @@ use yii\bootstrap4\NavBar;
 AppAsset::register($this);
 ltAppAsset::register($this);
 
-$this->title = 'wfms practice';
+//$this->title = 'wfms practice';
 ?>
 
 <?php $this->beginPage() ?>
@@ -74,7 +74,7 @@ $this->title = 'wfms practice';
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="index.html"><img src="/images/home/logo.png" alt="" /></a>
+                        <a href="<?= \yii\helpers\Url::home() ?>"><?= Html::img('@web/images/home/logo.png', ['alt' => 'E-SHOPPER']) ?></a>
                     </div>
                     <div class="btn-group pull-right">
                         <div class="btn-group">
