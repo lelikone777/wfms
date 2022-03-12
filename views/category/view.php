@@ -61,16 +61,20 @@ use yii\helpers\Html;
 <!--                                    <img src="/images/shop/product12.jpg" alt="" />-->
                                     <?= Html::img("@web/images/products/{$product->img}", ['alt' => $product->name]) ?>
                                     <h2>$<?= $product->price ?></h2>
-                                    <p><a href="#"><?= $product->name ?></a></p>
+                                    <p>
+                                        <a href="<?= \yii\helpers\Url::to(['product/view', 'id' => $product->id]) ?>"><?= $product->name ?></a>
+                                    </p>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
-                                <div class="product-overlay">
-                                    <div class="overlay-content">
-                                        <h2>$<?= $product->price ?></h2>
-                                        <p><?= $product->name ?></p>
-                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                    </div>
-                                </div>
+
+<!--                                <div class="product-overlay">-->
+<!--                                    <div class="overlay-content">-->
+<!--                                        <h2>$--><?//= $product->price ?><!--</h2>-->
+<!--                                        <p>--><?//= $product->name ?><!--</p>-->
+<!--                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+
                                 <?php if ($product->new):  ?>
                                     <?= Html::img("@web/images/home/new.png", ['alt' => 'Новинка', 'class' => 'new']) ?>
                                 <?php endif ?>
@@ -90,18 +94,23 @@ use yii\helpers\Html;
                         <?php if ($i % 3 == 0): ?>
                             <div class="clearfix"></div>
                         <?php endif; ?>
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
+                        <div class="clearfix"></div>
+                        <?php
+                        echo \yii\widgets\LinkPager::widget([
+                            'pagination' => $pages,
+                        ]); ?>
                         <?php else: ?>
                             <h2>Здесь товаров пока нет...</h2>
                     <?php endif ?>
                     <div class="clearfix"></div>
 
-                    <ul class="pagination">
-                        <li class="active"><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">&raquo;</a></li>
-                    </ul>
+<!--                    <ul class="pagination">-->
+<!--                        <li class="active"><a href="">1</a></li>-->
+<!--                        <li><a href="">2</a></li>-->
+<!--                        <li><a href="">3</a></li>-->
+<!--                        <li><a href="">&raquo;</a></li>-->
+<!--                    </ul>-->
                 </div><!--features_items-->
             </div>
         </div>
