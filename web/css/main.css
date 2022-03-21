@@ -8,9 +8,9 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background:;
+  /*background:;*/
   position: relative;
-  font-weight:400px;
+  font-weight:400;
 }
 
 ul li {
@@ -863,6 +863,10 @@ h2.title {
 	margin-bottom:30px;
 }
 
+.product-image {
+  max-width: 255px;
+}
+
 .single-products {
   position: relative;
 }
@@ -905,13 +909,19 @@ h2.title {
 .product-overlay {
   background:#FE980F;
   top: 0;
-  display: none;
+  /*display: none;*/
   height: 0;
   position: absolute;
   transition: height 500ms ease 0s;
   width: 100%;
   display: block;
-  opacity:;
+  /*opacity: 0.5;*/
+}
+
+.product-overlay > a {
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
 .single-products:hover .product-overlay {
@@ -2153,7 +2163,7 @@ h2.title {
 
 .rating-area {
   border: 1px solid #F7F7F0;
-  direction: block;
+  /*direction: block;*/
   overflow: hidden;
 }
 

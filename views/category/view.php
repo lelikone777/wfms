@@ -58,8 +58,9 @@ use yii\helpers\Html;
                         <div class="product-image-wrapper">
                             <div class="single-products">
                                 <div class="productinfo text-center">
-<!--                                    <img src="/images/shop/product12.jpg" alt="" />-->
-                                    <?= Html::img("@web/images/products/{$product->img}", ['alt' => $product->name]) ?>
+                                    <div class="product-image">
+                                        <?= Html::img("@web/images/products/{$product->img}", ['alt' => $product->name]) ?>
+                                    </div>
                                     <h2>$<?= $product->price ?></h2>
                                     <p>
                                         <a href="<?= \yii\helpers\Url::to(['product/view', 'id' => $product->id]) ?>"><?= $product->name ?></a>
@@ -67,13 +68,15 @@ use yii\helpers\Html;
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
 
-<!--                                <div class="product-overlay">-->
-<!--                                    <div class="overlay-content">-->
-<!--                                        <h2>$--><?//= $product->price ?><!--</h2>-->
-<!--                                        <p>--><?//= $product->name ?><!--</p>-->
-<!--                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>-->
-<!--                                    </div>-->
-<!--                                </div>-->
+                                <div class="product-overlay">
+                                    <a  href=" <?= \yii\helpers\Url::to(['product/view', 'id' => $product->id]) ?> ">
+                                        <div class="overlay-content">
+                                            <h2>$<?= $product->price ?></h2>
+                                            <p><?= $product->name ?></p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                        </div>
+                                    </a>
+                                </div>
 
                                 <?php if ($product->new):  ?>
                                     <?= Html::img("@web/images/home/new.png", ['alt' => 'Новинка', 'class' => 'new']) ?>
